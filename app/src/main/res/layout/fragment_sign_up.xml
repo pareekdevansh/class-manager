@@ -17,15 +17,16 @@
 
         <ImageView
             android:id="@+id/ivLoginBackground"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="250dp"
+            android:scaleType="centerInside"
             android:src="@drawable/img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/welcome"
+            android:id="@+id/tvYourClassManager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your Class Manager"
@@ -36,16 +37,13 @@
             app:layout_constraintStart_toStartOf="@id/ivLoginBackground"
             app:layout_constraintTop_toTopOf="@id/ivLoginBackground" />
 
-        <!--name-->
 
         <EditText
             android:id="@+id/etPersonName"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="32dp"
             android:hint="Name"
-            android:background="@drawable/custom_shape"
-            android:elevation="4dp"
+            style="@style/edit_text_style"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,10 +55,8 @@
             android:id="@+id/etRegistrationNumber"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            style="@style/edit_text_style"
             android:hint="Registration Number"
-            android:background="@drawable/custom_shape"
-            android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etPersonName" />
@@ -68,12 +64,10 @@
 <!--        email address-->
         <EditText
             android:id="@+id/etEmailAddress"
+            style="@style/edit_text_style"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
             android:hint="Email Address"
-            android:background="@drawable/custom_shape"
-            android:elevation="4dp"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -84,23 +78,21 @@
             android:id="@+id/etPassword"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            style="@style/edit_text_style"
             android:hint="Password"
-            android:background="@drawable/custom_shape"
-            android:elevation="4dp"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
             app:layout_constraintTop_toBottomOf="@id/etEmailAddress" />
 
         <Button
-            android:id="@+id/btnSignUp"
+            android:id="@+id/btnLogIn"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:text="Sign Up"
             android:textAllCaps="false"
-            android:textSize="18sp"
+            android:textSize="@dimen/normal_font_size"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
             app:layout_constraintTop_toBottomOf="@id/etPassword" />
@@ -109,12 +101,12 @@
             android:id="@+id/tvOr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Or"
+            android:layout_marginTop="12dp"
+            android:text="or"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
+            app:layout_constraintTop_toBottomOf="@id/btnLogIn" />
 
         <ImageView
             android:id="@+id/ivGoogleIcon"
@@ -129,7 +121,7 @@
             android:id="@+id/tvSignUpUsingGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/custom_shape"
             android:elevation="4dp"
             android:padding="4dp"

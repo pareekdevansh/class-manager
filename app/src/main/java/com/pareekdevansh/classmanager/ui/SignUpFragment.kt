@@ -32,17 +32,6 @@ class SignUpFragment : Fragment() {
 //        return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        binding.btnSignUp.setOnClickListener {
-            Log.d("##SignUpFragment", "Signing In...")
-        }
-        binding.tvGoToLogInScreen.setOnClickListener{
-            Log.d("##SignUpFragment", "Returning Back to LogIn Fragment")
-
-        }
-
-    }
 
 }

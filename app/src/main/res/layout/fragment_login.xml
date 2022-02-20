@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,21 +10,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
 
         <ImageView
             android:id="@+id/ivLoginBackground"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="250dp"
+            android:scaleType="centerInside"
             android:src="@drawable/img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <TextView
-            android:id="@+id/welcome"
+            android:id="@+id/tvYourClassManager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your Class Manager"
@@ -36,17 +36,14 @@
             app:layout_constraintStart_toStartOf="@id/ivLoginBackground"
             app:layout_constraintTop_toTopOf="@id/ivLoginBackground" />
 
-
         <EditText
             android:id="@+id/etEmailAddress"
+            style="@style/edit_text_style"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:paddingHorizontal="2dp"
-            android:layout_marginTop="32dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="4dp"
             android:hint="Email Address"
-            android:background="@drawable/custom_shape"
-            android:elevation="4dp"
-
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,25 +51,26 @@
 
         <EditText
             android:id="@+id/etPassword"
+            style="@style/edit_text_style"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="4dp"
             android:hint="Password"
-            android:background="@drawable/custom_shape"
-            android:elevation="4dp"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
             app:layout_constraintTop_toBottomOf="@id/etEmailAddress" />
 
         <Button
-            android:id="@+id/btnSignUp"
+            android:id="@+id/btnLogIn"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/custom_shape"
             android:text="Log In"
             android:textAllCaps="false"
-            android:textSize="18sp"
+            android:textSize="@dimen/normal_font_size"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
             app:layout_constraintTop_toBottomOf="@id/etPassword" />
@@ -80,22 +78,26 @@
         <TextView
             android:id="@+id/tvForgotPassword"
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center_vertical"
+            android:textSize="@dimen/normal_font_size"
             android:text="forgot your password?"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="@id/btnSignUp"
-            app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/btnLogIn"
+            app:layout_constraintEnd_toEndOf="@id/btnLogIn"
+            app:layout_constraintTop_toBottomOf="@id/btnLogIn" />
 
 
         <TextView
             android:id="@+id/tvOr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Or"
+            android:layout_marginTop="12dp"
+            android:text="or"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
@@ -114,11 +116,11 @@
             android:id="@+id/tvSignUpUsingGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="4dp"
-            android:textSize="16sp"
-            android:text="Log In using Google Account"
+            android:layout_marginTop="12dp"
             android:focusable="true"
+            android:padding="4dp"
+            android:text="Log In using Google Account"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
@@ -131,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:cardCornerRadius="2dp"
-            app:cardElevation="4dp"
+            app:cardElevation="2dp"
             app:cardUseCompatPadding="true"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
@@ -155,10 +157,10 @@
                     android:layout_marginStart="4dp"
                     android:clickable="true"
 
+                    android:focusable="true"
                     android:padding="8dp"
                     android:text="Sign Up"
-                    android:textStyle="bold"
-                    android:focusable="true" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>

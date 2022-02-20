@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         // open login fragment
         val loginFragment = LoginFragment()
         val signUpFragment = SignUpFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.flFragmentContainer, signUpFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.flFragmentContainer, loginFragment)
             .commit()
 
 
@@ -63,41 +63,42 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
-    private fun updateQuery(oldPerson: Person, newPersonMap: Map<String, Any>) =
-        CoroutineScope(Dispatchers.IO).launch {
-            val personQuery = personCollectionRef
-                .whereEqualTo("name", oldPerson.name)
-                .whereEqualTo("registrationNumber", oldPerson.registrationNumber)
-                .whereEqualTo("email", oldPerson.email)
-                .whereEqualTo("mobileNumber", oldPerson.mobileNumber)
-                .get()
-                .await()
-
-            if (personQuery.isEmpty) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@MainActivity, "No query matched", Toast.LENGTH_LONG).show()
-                }
-            } else {
-
-                for (document in personQuery) {
-                    try {
-                        personCollectionRef.document(document.id).set(
-                            newPersonMap,
-                            SetOptions.merge()
-                        ).await()
-                    } catch (e: Exception) {
-                        withContext(Dispatchers.Main) {
-                            Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_LONG).show()
-                        }
-                    }
-                }
-            }
-
-
-        }
-
 }
+
+//    private fun updateQuery(oldPerson: Person, newPersonMap: Map<String, Any>) =
+//        CoroutineScope(Dispatchers.IO).launch {
+//            val personQuery = personCollectionRef
+//                .whereEqualTo("name", oldPerson.name)
+//                .whereEqualTo("registrationNumber", oldPerson.registrationNumber)
+//                .whereEqualTo("email", oldPerson.email)
+//                .whereEqualTo("mobileNumber", oldPerson.mobileNumber)
+//                .get()
+//                .await()
+//
+//            if (personQuery.isEmpty) {
+//                withContext(Dispatchers.Main) {
+//                    Toast.makeText(this@MainActivity, "No query matched", Toast.LENGTH_LONG).show()
+//                }
+//            } else {
+//
+//                for (document in personQuery) {
+//                    try {
+//                        personCollectionRef.document(document.id).set(
+//                            newPersonMap,
+//                            SetOptions.merge()
+//                        ).await()
+//                    } catch (e: Exception) {
+//                        withContext(Dispatchers.Main) {
+//                            Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_LONG).show()
+//                        }
+//                    }
+//                }
+//            }
+//
+//
+//        }
+//
+//}
 //    private fun getNewPersonMap(): Map<String, Any> {
 //        val map = mutableMapOf<String, Any>()
 //        val name = binding.etNewPersonName.text.toString()
