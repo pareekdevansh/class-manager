@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "884501220996",
+    "project_id": "devanshpareek13",
+    "storage_bucket": "devanshpareek13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884501220996:android:530b5ca79faa71ec557cd1",
+        "android_client_info": {
+          "package_name": "com.pareekdevansh.classmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884501220996-nchndi31s0d1id1111pl4svg10e0ohsj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA8I-44ESTVYie9jntoNmEt37MyLpcsm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884501220996-nchndi31s0d1id1111pl4svg10e0ohsj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.LoginFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <ImageView
+            android:id="@+id/ivLoginBackground"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:src="@drawable/img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Class Manager"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLoginBackground"
+            app:layout_constraintEnd_toEndOf="@id/ivLoginBackground"
+            app:layout_constraintStart_toStartOf="@id/ivLoginBackground"
+            app:layout_constraintTop_toTopOf="@id/ivLoginBackground" />
+
+
+        <EditText
+            android:id="@+id/etEmailAddress"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:paddingHorizontal="2dp"
+            android:layout_marginTop="32dp"
+            android:hint="Email Address"
+            android:background="@drawable/custom_shape"
+            android:elevation="4dp"
+
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLoginBackground" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:hint="Password"
+            android:background="@drawable/custom_shape"
+            android:elevation="4dp"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/etEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/etEmailAddress" />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Log In"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/etEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:text="forgot your password?"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="@id/btnSignUp"
+            app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
+
+
+        <TextView
+            android:id="@+id/tvOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Or"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/etEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
+
+        <ImageView
+            android:id="@+id/ivGoogleIcon"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_google"
+            app:layout_constraintBottom_toBottomOf="@id/tvSignUpUsingGoogle"
+            app:layout_constraintEnd_toStartOf="@id/tvSignUpUsingGoogle"
+            app:layout_constraintTop_toTopOf="@id/tvSignUpUsingGoogle" />
+
+        <TextView
+            android:id="@+id/tvSignUpUsingGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:textSize="16sp"
+            android:text="Log In using Google Account"
+            android:focusable="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/etEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvOr" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSignUp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/etEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvSignUpUsingGoogle">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't Have An Account?" />
+
+                <TextView
+                    android:id="@+id/tvGotoSignUpScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+
+                    android:padding="8dp"
+                    android:text="Sign Up"
+                    android:textStyle="bold"
+                    android:focusable="true" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
