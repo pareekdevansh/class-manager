@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="edit_text_style">
-        <item name="android:layout_marginTop">@dimen/large_margin</item>
-        <item name="android:padding">@dimen/large_margin</item>
+    <style name="style_edit_text">
+        <item name="android:layout_marginTop">@dimen/margin_scale4</item>
+        <item name="android:padding">@dimen/margin_scale4</item>
         <item name="android:background">@drawable/custom_shape</item>
-        <item name="android:elevation">@dimen/small_margin</item>
-        <item name="android:textSize">@dimen/normal_font_size</item>
+        <item name="android:elevation">@dimen/margin_scale1</item>
+        <item name="android:textSize">@dimen/font_size_normal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
+    <style name="style_text_view">
+        <item name="android:layout_marginTop">@dimen/margin_scale4</item>
+        <item name="android:padding">@dimen/margin_scale4</item>
+<!--        <item name="android:background">@drawable/custom_shape</item>-->
+<!--        <item name="android:elevation">@dimen/margin_scale1</item>-->
+        <item name="android:textSize">@dimen/font_size_normal</item>
         <item name="android:gravity">center_vertical</item>
     </style>
 </resources>

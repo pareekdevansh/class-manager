@@ -38,7 +38,7 @@
 
         <EditText
             android:id="@+id/etEmailAddress"
-            style="@style/edit_text_style"
+            style="@style/style_edit_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_email_24"
@@ -51,7 +51,7 @@
 
         <EditText
             android:id="@+id/etPassword"
-            style="@style/edit_text_style"
+            style="@style/style_edit_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_lock_24"
@@ -70,7 +70,7 @@
             android:background="@drawable/custom_shape"
             android:text="Log In"
             android:textAllCaps="false"
-            android:textSize="@dimen/normal_font_size"
+            android:textSize="@dimen/font_size_normal"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
             app:layout_constraintTop_toBottomOf="@id/etPassword" />
@@ -84,7 +84,7 @@
             android:clickable="true"
             android:focusable="true"
             android:gravity="center_vertical"
-            android:textSize="@dimen/normal_font_size"
+            android:textSize="@dimen/font_size_normal"
             android:text="forgot your password?"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/btnLogIn"

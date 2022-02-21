@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.dynamic.SupportFragmentWrapper
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.google.rpc.context.AttributeContext
 import com.pareekdevansh.classmanager.R
 import com.pareekdevansh.classmanager.databinding.ActivityMainBinding
 import com.pareekdevansh.classmanager.databinding.FragmentLoginBinding
@@ -23,11 +26,14 @@ private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var auth : FirebaseAuth
     private val personCollectionRef = Firebase.firestore.collection("persons")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth = Firebase.auth
 
         // open login fragment
         val loginFragment = LoginFragment()
