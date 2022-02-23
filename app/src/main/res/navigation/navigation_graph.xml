@@ -21,6 +21,11 @@
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/homeFragment"/>
     </fragment>
 
     <fragment
@@ -61,7 +66,9 @@
             />
         <action
             android:id="@+id/action_signUpFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/homeFragment"/>
     </fragment>
 
     <fragment

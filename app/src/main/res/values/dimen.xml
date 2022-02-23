@@ -3,7 +3,6 @@
 
 
     // margins
-    <dimen name="margin_large">32dp</dimen>
     <dimen name="margin_scale4">16dp</dimen>
     <dimen name="margin_scale3">12dp</dimen>
     <dimen name="margin_scale2">8dp</dimen>
@@ -11,7 +10,6 @@
 
     //fonts
     <dimen name="font_size_normal">16sp</dimen>
-    <dimen name="font_size_headline">32sp</dimen>
     <dimen name="font_size_large1">20sp</dimen>
 
 </resources>

@@ -13,8 +13,14 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.pareekdevansh.classmanager.databinding.FragmentLoginBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
-const val tag = "LoginFramgment"
+const val tag = "LoginFragmment"
+// TODO : implement login using google account
 
 class LoginFragment : Fragment() {
 
@@ -38,7 +44,6 @@ class LoginFragment : Fragment() {
 
         // on pressing forgot password, navigate to forgot password fragment
 
-        val currentUser = auth.currentUser
         binding.btnLogIn.setOnClickListener {
 
             val email = binding.etEmailAddress.text.toString().trim{it <= ' '}
@@ -49,42 +54,42 @@ class LoginFragment : Fragment() {
             }
             else
             {
-                auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            Log.d(tag, "signInWithEmail:success")
-                            val user = auth.currentUser
-                            updateUi(user)
-
-                        }
-                        else{
-                            val msg = "signInWithEmail:failed"
-                            showToast(msg)
-                            Log.d(tag, "signInWithEmail:failed")
-                            updateUi(null)
+                CoroutineScope(Dispatchers.IO).launch {
+                    try {
+                        auth.signInWithEmailAndPassword(email, password).await()
+                        if(auth.currentUser != null ){
+                            withContext(Dispatchers.Main){
+                                showToast("Login Successful")
+                                val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+                                findNavController().navigate(action)
+                            }
                         }
                     }
+                    catch (e : Exception){
+                        withContext(Dispatchers.Main){
+                            showToast(e.message.toString())
+                        }
+                    }
+
+                }
             }
         }
 
-
+        // navigate to forgot password
         binding.tvForgotPassword.setOnClickListener {
             val actoin = LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment()
             findNavController().navigate(actoin)
         }
 
+        //navigate to sign up screen
         binding.tvGotoSignUpScreen.setOnClickListener{
             val action = LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
             findNavController().navigate(action)
         }
 
-        // TODO : implement login using google account
-
     }
 
-    private fun updateUi(user: FirebaseUser?) {
-        TODO("Not yet implemented")
-    }
+
 
     private fun isAnyFieldEmpty(email : String , password : String ):Boolean {
         return email.isEmpty() or password.isEmpty()
