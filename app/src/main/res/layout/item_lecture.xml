@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:cardCornerRadius="@dimen/margin_scale2"
-    app:cardElevation="@dimen/margin_scale2"
-    app:cardUseCompatPadding="true">
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/margin_scale1"
+   >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/blackboard_bg"
-        android:padding="@dimen/margin_scale2">
+        >
 
 
         <TextView
-            android:id="@+id/courseName"
+            android:id="@+id/tvCourseName"
             style="@style/style_text_lecture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/margin_scale1"
-            android:textSize="@dimen/font_size_headline"
+            android:textSize="@dimen/font_size_large"
             app:drawableEndCompat="@drawable/ic_baseline_library_books_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,46 +32,49 @@
         <TextView
             android:id="@+id/tvProfessorName"
             style="@style/style_text_lecture"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/margin_scale1"
             app:drawableStartCompat="@drawable/professor"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/courseName"
+            app:layout_constraintTop_toBottomOf="@id/tvCourseName"
+            app:layout_constraintEnd_toStartOf="@id/tvCourseCode"
             tools:text="Android Master" />
 
         <TextView
             android:id="@+id/tvCourseCode"
             style="@style/style_text_lecture"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_scale2"
             android:drawablePadding="@dimen/margin_scale2"
+            android:gravity="bottom"
             app:drawableStartCompat="@drawable/number"
-            app:layout_constraintStart_toStartOf="@id/tvProfessorName"
-            app:layout_constraintTop_toBottomOf="@id/tvProfessorName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvProfessorName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvProfessorName"
             tools:text="EC1303" />
 
         <TextView
             android:id="@+id/tvDay"
             style="@style/style_text_lecture"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_scale1"
-            android:drawablePadding="@dimen/margin_scale2"
+            android:drawablePadding="@dimen/margin_scale1"
             app:drawableStartCompat="@drawable/calendar"
             app:layout_constraintStart_toStartOf="@id/tvProfessorName"
-            app:layout_constraintTop_toBottomOf="@id/tvCourseCode"
+            app:layout_constraintTop_toBottomOf="@id/tvProfessorName"
             tools:text="Monday" />
 
         <TextView
             android:id="@+id/tvDate"
             style="@style/style_text_lecture"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_scale1"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvDay"
             app:layout_constraintStart_toEndOf="@id/tvDay"
-            app:layout_constraintTop_toBottomOf="@id/tvCourseCode"
+            app:layout_constraintTop_toTopOf="@id/tvDay"
             tools:text="12 Feb 2022" />
 
         <TextView
