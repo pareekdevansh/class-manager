@@ -6,5 +6,4 @@ data class User(
     val email : String = "",
     val mobileNumber : String = "" ,
     val password : String = ""
-    //Image
 )

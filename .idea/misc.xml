@@ -12,7 +12,7 @@
         <entry key="app/src/main/res/layout/forgot_password.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_change_password.xml" value="0.27905982905982907" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.27905982905982907" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_login2.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
         <entry key="app/src/main/res/layout/resert_password.xml" value="0.2782051282051282" />

@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="dull_white">#EEEADE</color>
+    <color name="saffron">#FF9933</color>
+    <color name="saffron_700">#CE7115</color>
+    <color name="green_light">#93BF41</color>
+    <color name="xbox_green">#0e7a0d</color>
+    <color name="sunset_orange">#fd5e53</color>
+    <color name="pale_persimmon">#fca474</color>
+    <color name="charcoal">#36454f</color>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/dull_white"
     tools:context=".ui.LoginFragment">
 
 
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_email_24"
             android:drawablePadding="4dp"
+            android:autofillHints="emailAddress"
             android:hint="Email Address"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +58,7 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawablePadding="4dp"
+            android:autofillHints="password"
             android:hint="Password"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
