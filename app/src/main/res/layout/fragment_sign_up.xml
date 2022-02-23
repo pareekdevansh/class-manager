@@ -41,7 +41,7 @@
         <EditText
             android:id="@+id/etPersonName"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:hint="Name"
             style="@style/style_edit_text"
             android:inputType="textPersonName"
@@ -54,7 +54,8 @@
         <EditText
             android:id="@+id/etRegistrationNumber"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+
             style="@style/style_edit_text"
             android:hint="Registration Number"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +67,8 @@
             android:id="@+id/etEmailAddress"
             style="@style/style_edit_text"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+
             android:hint="Email Address"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +79,8 @@
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+
             style="@style/style_edit_text"
             android:hint="Password"
             android:inputType="textPassword"
@@ -86,13 +89,16 @@
             app:layout_constraintTop_toBottomOf="@id/etEmailAddress" />
 
         <Button
-            android:id="@+id/btnLogIn"
+            android:id="@+id/btnSignUp"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Sign Up"
+            android:layout_marginHorizontal="2dp"
+            android:gravity="center"
+            android:padding="@dimen/margin_scale2"
             android:textAllCaps="false"
-            android:textSize="@dimen/font_size_normal"
+            android:textSize="@dimen/font_size_large1"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
             app:layout_constraintTop_toBottomOf="@id/etPassword" />
@@ -106,28 +112,19 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/btnLogIn" />
-
-        <ImageView
-            android:id="@+id/ivGoogleIcon"
-            android:layout_width="24dp"
-            android:layout_height="0dp"
-            android:src="@drawable/ic_google"
-            app:layout_constraintBottom_toBottomOf="@id/tvSignUpUsingGoogle"
-            app:layout_constraintEnd_toStartOf="@id/tvSignUpUsingGoogle"
-            app:layout_constraintTop_toTopOf="@id/tvSignUpUsingGoogle" />
+            app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
 
         <TextView
-            android:id="@+id/tvSignUpUsingGoogle"
+            android:id="@+id/tvLogInUsingGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/custom_shape"
-            android:elevation="4dp"
-            android:padding="4dp"
-            android:textSize="16sp"
-            android:text="Sign Up using Google Account"
+            android:drawableStart="@drawable/ic_google"
+            android:drawablePadding="2dp"
             android:focusable="true"
+            android:padding="4dp"
+            android:text="Log In using Google Account"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
@@ -144,7 +141,7 @@
             app:cardUseCompatPadding="true"
             app:layout_constraintEnd_toEndOf="@id/etEmailAddress"
             app:layout_constraintStart_toStartOf="@id/etEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/tvSignUpUsingGoogle">
+            app:layout_constraintTop_toBottomOf="@id/tvLogInUsingGoogle">
 
             <LinearLayout
                 android:layout_width="wrap_content"

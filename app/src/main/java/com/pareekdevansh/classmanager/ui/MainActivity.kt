@@ -1,44 +1,40 @@
 package com.pareekdevansh.classmanager.ui
 
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.dynamic.SupportFragmentWrapper
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.SetOptions
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
-import com.google.firebase.ktx.Firebase
-import com.google.rpc.context.AttributeContext
-import com.pareekdevansh.classmanager.R
-import com.pareekdevansh.classmanager.databinding.ActivityMainBinding
-import com.pareekdevansh.classmanager.databinding.FragmentLoginBinding
-import com.pareekdevansh.classmanager.model.Person
-import com.pareekdevansh.classmanager.ui.LoginFragment
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
-import kotlinx.coroutines.withContext
+import android.widget.Button
 
-private lateinit var binding: ActivityMainBinding
+
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+
+import com.pareekdevansh.classmanager.R
+import kotlin.math.sign
+
 
 class MainActivity : AppCompatActivity() {
 
 
-    private val personCollectionRef = Firebase.firestore.collection("persons")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
+//
+//        val signUpFragment = SignUpFragment()
+//        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, signUpFragment).commit()
 
 
+        // if you want to navigate at some destination from main activity
+        // first find yout fragment container view and tell android that you will use this as NavHostFragment
+//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
-        // open login fragment
-        val loginFragment = LoginFragment()
-        val signUpFragment = SignUpFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.flFragmentContainer, loginFragment)
-            .commit()
+        // find navController for this fragment container view
+//        val navController = navHostFragment.findNavController()
+
+        //define the action which you want to perform
+//        val action = SignUpFragmentDirections.actionSignUpFragment3ToLoginFragment()
+
+        // choose when the action will be perfomed ex. on click of button2
+
     }
 }
