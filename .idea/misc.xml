@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/clock.xml" value="0.316" />
         <entry key="app/src/main/res/drawable/conference_class.xml" value="0.316" />
         <entry key="app/src/main/res/drawable/custom_shape.xml" value="0.1725" />
+        <entry key="app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.316" />
         <entry key="app/src/main/res/drawable/ic_google.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/notification.xml" value="0.316" />
         <entry key="app/src/main/res/drawable/number.xml" value="0.316" />
@@ -24,6 +25,7 @@
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_login2.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_update_profile.xml" value="0.13504273504273503" />
         <entry key="app/src/main/res/layout/item_lecture.xml" value="0.27905982905982907" />
         <entry key="app/src/main/res/layout/resert_password.xml" value="0.2782051282051282" />
         <entry key="app/src/main/res/layout/reset_password.xml" value="0.2782051282051282" />
