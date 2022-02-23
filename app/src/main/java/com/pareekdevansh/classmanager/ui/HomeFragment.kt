@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -33,5 +35,15 @@ class HomeFragment : Fragment() {
             // user is already logged in
 
         }
+        val button = view?.findViewById<Button>(R.id.button2)
+        button.setOnClickListener {
+            Firebase.auth.signOut()
+            Toast.makeText(requireContext(), "Loging Out", Toast.LENGTH_SHORT).show()
+            val action = HomeFragmentDirections.actionHomeFragmentToLoginFragment()
+            findNavController().navigate(action)
+
+        }
+
     }
+
 }
