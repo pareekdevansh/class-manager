@@ -11,7 +11,7 @@
         android:id="@+id/tvUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/font_size_large1"
+        android:textSize="@dimen/font_size_medium"
         android:padding="@dimen/margin_scale3"
         tools:text="Devansh Pareek"
         />
@@ -20,7 +20,7 @@
         android:id="@+id/tvuserEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/font_size_large1"
+        android:textSize="@dimen/font_size_medium"
         android:padding="@dimen/margin_scale3"
         android:text="devanshpareek863@gmail.com"/>
 

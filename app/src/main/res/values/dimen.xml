@@ -10,6 +10,9 @@
 
     //fonts
     <dimen name="font_size_normal">16sp</dimen>
-    <dimen name="font_size_large1">20sp</dimen>
+    <dimen name="font_size_medium">20sp</dimen>
+    <dimen name="font_size_large">24sp</dimen>
+    <dimen name="font_size_headline">32sp</dimen>
+
 
 </resources>

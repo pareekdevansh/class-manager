@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="@dimen/margin_scale2"
+    app:cardElevation="@dimen/margin_scale2"
+    app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blackboard_bg"
+        android:padding="@dimen/margin_scale2">
+
+        <!-- <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:src="@drawable/greenboard_bg"
+             android:scaleType="fitXY"
+             />-->
+
+        <TextView
+            android:id="@+id/courseName"
+            style="@style/style_text_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/margin_scale1"
+            android:textSize="@dimen/font_size_headline"
+            app:drawableEndCompat="@drawable/ic_baseline_library_books_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Analog Electronics" />
+
+        <TextView
+            android:id="@+id/tvProfessorName"
+            style="@style/style_text_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/margin_scale1"
+            app:drawableStartCompat="@drawable/professor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/courseName"
+            tools:text="Android Master" />
+
+        <TextView
+            android:id="@+id/tvCourseCode"
+            style="@style/style_text_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_scale2"
+            android:drawablePadding="@dimen/margin_scale2"
+            app:drawableStartCompat="@drawable/number"
+            app:layout_constraintStart_toStartOf="@id/tvProfessorName"
+            app:layout_constraintTop_toBottomOf="@id/tvProfessorName"
+            tools:text="EC1303" />
+
+        <TextView
+            android:id="@+id/tvDay"
+            style="@style/style_text_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_scale1"
+            android:drawablePadding="@dimen/margin_scale2"
+            app:drawableStartCompat="@drawable/calendar"
+            app:layout_constraintStart_toStartOf="@id/tvProfessorName"
+            app:layout_constraintTop_toBottomOf="@id/tvCourseCode"
+            tools:text="Monday" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            style="@style/style_text_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_scale1"
+            app:layout_constraintStart_toEndOf="@id/tvDay"
+            app:layout_constraintTop_toBottomOf="@id/tvCourseCode"
+            tools:text="12 Feb 2022" />
+
+        <TextView
+            android:id="@+id/tvStartingTime"
+            style="@style/style_text_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_scale1"
+            android:drawablePadding="@dimen/margin_scale2"
+            app:drawableStartCompat="@drawable/clock"
+            app:layout_constraintStart_toStartOf="@id/tvProfessorName"
+            app:layout_constraintTop_toBottomOf="@id/tvDay"
+            tools:text="12:00 PM" />
+<!--
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStartingTime"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginStart="@dimen/margin_scale2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/alarm"/>
+
+        </LinearLayout>-->
+
+        <Button
+            android:id="@+id/btnSetAlarm"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/alarm"
+            android:text="@string/set_alarm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_normal"
+            app:iconGravity="top"
+            app:iconPadding="@dimen/margin_scale2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStartingTime"
+            />
+
+        <Button
+            android:id="@+id/btnJoinClass"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/virtual_meet"
+            android:gravity="center"
+            android:text="@string/join_class"
+            android:textColor="@color/white"
+            app:iconGravity="top"
+            app:iconPadding="@dimen/margin_scale2"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnSetAlarm"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
