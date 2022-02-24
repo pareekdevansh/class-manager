@@ -18,7 +18,7 @@ import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.pareekdevansh.classmanager.R
-import com.pareekdevansh.classmanager.adapter.LecturesAdapter
+import com.pareekdevansh.classmanager.adapter.TodaysLecturesAdapter
 import com.pareekdevansh.classmanager.databinding.FragmentHomeBinding
 import com.pareekdevansh.classmanager.model.Lecture
 import kotlinx.coroutines.CoroutineScope
@@ -32,13 +32,13 @@ private lateinit var auth: FirebaseAuth
 private var currentUser: FirebaseUser? = null
 private val userCollectoinRef = FirebaseFirestore.getInstance().collection("user")
 private val lectureCollectoinRef = FirebaseFirestore.getInstance().collection("lectures")
-val calendar: Calendar = Calendar.getInstance()
 
 
 class HomeFragment : Fragment() {
 
     private lateinit var _binding: FragmentHomeBinding
     private val binding get() = _binding
+    val calendar: Calendar = Calendar.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,6 +72,18 @@ class HomeFragment : Fragment() {
             showTodaysLectures(todaysClasses, currDay)
 
 
+        }
+
+        val btnAdminSide = view.findViewById<Button>(R.id.btnAdminSide)
+        btnAdminSide.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToAdminSideFragment()
+            findNavController().navigate(action)
+        }
+
+        val btnSchedule = view.findViewById<Button>(R.id.btnSchdeule)
+        btnSchedule.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToScheduleFragment()
+            findNavController().navigate(action)
         }
 
         val button = view.findViewById<Button>(R.id.button2)
@@ -133,6 +145,11 @@ class HomeFragment : Fragment() {
     private suspend fun updateUI(todaysClasses: MutableList<Lecture>) {
         Log.d("StrangeTag", "started updating UI")
 
+        // loading circle should not be shown any more
+        binding.loadingCircle.apply {
+            loop(false)
+            visibility = View.GONE
+        }
         // check for no classes for current day
         if (todaysClasses.isEmpty()) {
             // show no classes today
@@ -140,7 +157,7 @@ class HomeFragment : Fragment() {
         } else {
             // apply recycler view
             binding.rvLectures.apply {
-                adapter = LecturesAdapter(todaysClasses, calendar, requireContext())
+                adapter = TodaysLecturesAdapter(todaysClasses, calendar, requireContext())
                 layoutManager = LinearLayoutManager(requireContext())
                 Log.d("StrangeTag", "setting up the RV")
             }

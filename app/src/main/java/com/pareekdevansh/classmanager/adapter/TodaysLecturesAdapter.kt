@@ -1,7 +1,8 @@
 package com.pareekdevansh.classmanager.adapter
 
-import android.app.Application
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,21 +10,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.compose.runtime.currentRecomposeScope
 import androidx.recyclerview.widget.RecyclerView
-import com.google.type.Date
 import com.pareekdevansh.classmanager.R
 import com.pareekdevansh.classmanager.model.Lecture
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
-class LecturesAdapter(
+class TodaysLecturesAdapter(
     private val lectures: MutableList<Lecture>,
     private val calendar: Calendar,
     private val context: Context
-): RecyclerView.Adapter<LecturesAdapter.LectureViewHolder>() {
+): RecyclerView.Adapter<TodaysLecturesAdapter.LectureViewHolder>() {
 
 
     inner class LectureViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
@@ -38,7 +35,7 @@ class LecturesAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LectureViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_lecture, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_lecture_today, parent, false)
         return LectureViewHolder(view)
     }
 
@@ -66,13 +63,21 @@ class LecturesAdapter(
             Toast.makeText(context, "Alarm is set for ${lecture.startingTime}", Toast.LENGTH_LONG).show()
         }
 
-        // TODO : When Join Class is pressed
+
         holder.btnJoinClass.setOnClickListener {
             Toast.makeText(context, "Joining Class", Toast.LENGTH_LONG).show()
+            joinClass(lecture.link)
         }
 
 
 
+    }
+
+    private fun joinClass(link: String) {
+        val uri = Uri.parse(link)
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        intent.data = uri
+        context.startActivity(intent)
     }
 
     override fun getItemCount() : Int = lectures.size

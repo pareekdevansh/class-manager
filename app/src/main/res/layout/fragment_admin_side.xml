@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dull_white"
+    tools:context=".ui.AdminSideFragment">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <EditText
+            android:id="@+id/etCourseName"
+            style="@style/style_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_shape"
+            android:hint="Course Name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etProffessorName"
+            style="@style/style_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Professor Name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etCourseCode"
+            style="@style/style_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Course Code"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etDay"
+            style="@style/style_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Day"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etStartingTime"
+            style="@style/style_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Starts At"
+            android:importantForAutofill="no"
+            android:inputType="time" />
+
+
+
+        <EditText
+            android:id="@+id/etJoiningLink"
+            style="@style/style_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Joining Link"
+            android:inputType="textUri" />
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddClass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@id/btnDeleteClass"/>
+
+    <Button
+        android:id="@+id/btnDeleteClass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        app:layout_constraintTop_toTopOf="@id/btnAddClass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnAddClass"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="@dimen/margin_scale1"
-    >
+   >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -91,6 +90,37 @@
             tools:text="12:00 PM" />
 
 
+        <Button
+            android:id="@+id/btnSetAlarm"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/alarm"
+            android:fontFamily="@font/averia_sans_libre"
+            android:text="@string/set_alarm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_normal"
+            android:textStyle="bold"
+            app:iconGravity="top"
+            app:iconPadding="@dimen/margin_scale2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStartingTime" />
+
+        <Button
+            android:id="@+id/btnJoinClass"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/virtual_meet"
+            android:fontFamily="@font/averia_sans_libre"
+            android:gravity="center"
+            android:text="@string/join_class"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:iconGravity="top"
+            app:iconPadding="@dimen/margin_scale2"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnSetAlarm"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
