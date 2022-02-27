@@ -6,15 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardUseCompatPadding="true"
-    app:cardCornerRadius="@dimen/margin_scale1"
+    app:cardCornerRadius="@dimen/margin_scale3"
+    android:elevation="@dimen/margin_scale3"
     >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/blackboard_bg"
-        >
+        android:padding="@dimen/margin_scale2"
+        android:background="@drawable/blackboard_bg">
 
 
         <TextView
@@ -23,7 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/margin_scale1"
-            android:textSize="@dimen/font_size_large"
+            android:textStyle="bold"
+            android:elevation="@dimen/margin_scale2"
             app:drawableEndCompat="@drawable/ic_baseline_library_books_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,13 +35,12 @@
         <TextView
             android:id="@+id/tvProfessorName"
             style="@style/style_text_lecture"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/margin_scale1"
             app:drawableStartCompat="@drawable/professor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCourseName"
-            app:layout_constraintEnd_toStartOf="@id/tvCourseCode"
             tools:text="Android Master" />
 
         <TextView
@@ -47,12 +48,14 @@
             style="@style/style_text_lecture"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/margin_scale2"
+            android:drawablePadding="8dp"
             android:gravity="bottom"
+            android:paddingLeft="16dp"
             app:drawableStartCompat="@drawable/number"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvProfessorName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvProfessorName"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvDay"
+            app:layout_constraintTop_toTopOf="@id/tvDay"
             tools:text="EC1303" />
 
         <TextView
@@ -63,20 +66,12 @@
             android:layout_marginStart="@dimen/margin_scale1"
             android:drawablePadding="@dimen/margin_scale1"
             app:drawableStartCompat="@drawable/calendar"
-            app:layout_constraintStart_toStartOf="@id/tvProfessorName"
+            app:layout_constraintEnd_toStartOf="@+id/tvCourseCode"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvProfessorName"
             tools:text="Monday" />
 
-        <TextView
-            android:id="@+id/tvDate"
-            style="@style/style_text_lecture"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_scale1"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tvDay"
-            app:layout_constraintStart_toEndOf="@id/tvDay"
-            app:layout_constraintTop_toTopOf="@id/tvDay"
-            tools:text="12 Feb 2022" />
 
         <TextView
             android:id="@+id/tvStartingTime"
@@ -89,7 +84,6 @@
             app:layout_constraintStart_toStartOf="@id/tvProfessorName"
             app:layout_constraintTop_toBottomOf="@id/tvDay"
             tools:text="12:00 PM" />
-
 
 
 

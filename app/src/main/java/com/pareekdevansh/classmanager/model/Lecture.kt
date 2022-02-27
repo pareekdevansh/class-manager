@@ -11,5 +11,5 @@ data class Lecture(
     val startingTime :String = "",
     val link : String = "",
     val link2 : String ="",
-    val classStatus : String = ""
+    val classUpdates : String = ""
 )

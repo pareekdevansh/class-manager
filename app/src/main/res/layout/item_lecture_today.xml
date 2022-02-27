@@ -7,6 +7,10 @@
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="@dimen/margin_scale1"
    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +26,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/margin_scale1"
-            android:textSize="@dimen/font_size_large"
+            android:elevation="@dimen/margin_scale2"
+            android:textStyle="bold"
             app:drawableEndCompat="@drawable/ic_baseline_library_books_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +95,7 @@
             tools:text="12:00 PM" />
 
 
-        <Button
+        <!--<Button
             android:id="@+id/btnSetAlarm"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
@@ -105,7 +110,7 @@
             app:iconPadding="@dimen/margin_scale2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvStartingTime" />
-
+-->
         <Button
             android:id="@+id/btnJoinClass"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -119,10 +124,31 @@
             android:textStyle="bold"
             app:iconGravity="top"
             app:iconPadding="@dimen/margin_scale2"
-            app:layout_constraintBaseline_toBaselineOf="@+id/btnSetAlarm"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@id/tvStartingTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/style_text_lecture"
+        android:textColor="@color/black"
+        android:elevation="@dimen/margin_scale4"
+        android:background="@color/Platinum"
+        android:text="class updates"/>
+    <TextView
+        android:id="@+id/classUpdates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/style_text_lecture"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/Platinum"
+        android:text="on Time" />
+
+</LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

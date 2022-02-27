@@ -27,7 +27,6 @@ class TotalLecturesAdapter(
         val tvProfessorName: TextView = itemView.findViewById<TextView>(R.id.tvProfessorName)
         val tvCourseCode: TextView = itemView.findViewById<TextView>(R.id.tvCourseCode)
         val tvDay: TextView = itemView.findViewById<TextView>(R.id.tvDay)
-        val tvDate: TextView = itemView.findViewById<TextView>(R.id.tvDate)
         val tvStartingTime: TextView = itemView.findViewById<TextView>(R.id.tvStartingTime)
 
     }
@@ -47,12 +46,6 @@ class TotalLecturesAdapter(
         holder.tvCourseCode.text = lecture.courseCode
         holder.tvDay.text = getCurrentDay(lecture.day)
 
-        val date = SimpleDateFormat("dd MMM yy").format(calendar.time).toString()
-        holder.tvDate.text = date
-
-        //debug
-        Log.d("StrangeTag", holder.tvDate.text.toString())
-        Log.d("StrangeTag","Implementing RecyclerView")
         holder.tvStartingTime.text = lecture.startingTime
 
 

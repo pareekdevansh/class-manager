@@ -30,8 +30,8 @@ class TodaysLecturesAdapter(
         val tvDay: TextView = itemView.findViewById<TextView>(R.id.tvDay)
         val tvDate: TextView = itemView.findViewById<TextView>(R.id.tvDate)
         val tvStartingTime: TextView = itemView.findViewById<TextView>(R.id.tvStartingTime)
-        val btnSetAlarm: Button = itemView.findViewById<Button>(R.id.btnSetAlarm)
         val btnJoinClass: Button = itemView.findViewById<Button>(R.id.btnJoinClass)
+        val classUpdates : TextView = itemView.findViewById(R.id.classUpdates)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LectureViewHolder {
@@ -44,6 +44,7 @@ class TodaysLecturesAdapter(
         Log.d("StrangeTag", "Shuru to hua h")
 
         val lecture = lectures[position]
+
         holder.tvCourseName.text = lecture.courseName
         holder.tvProfessorName.text = lecture.professorName
         holder.tvCourseCode.text = lecture.courseCode
@@ -58,19 +59,11 @@ class TodaysLecturesAdapter(
         holder.tvStartingTime.text = lecture.startingTime
 
 
-        // TODO: when button set alarm is pressed
-        holder.btnSetAlarm.setOnClickListener {
-            Toast.makeText(context, "Alarm is set for ${lecture.startingTime}", Toast.LENGTH_LONG).show()
-        }
-
-
         holder.btnJoinClass.setOnClickListener {
-            Toast.makeText(context, "Joining Class", Toast.LENGTH_LONG).show()
             joinClass(lecture.link)
         }
 
-
-
+        holder.classUpdates.text = lecture.classUpdates
     }
 
     private fun joinClass(link: String) {

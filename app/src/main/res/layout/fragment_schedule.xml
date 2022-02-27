@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
     tools:context=".ui.ScheduleFragment">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingCircle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:lottie_fileName="loading_colored.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+
+        />
+
+  <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <SearchView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="5"
+            android:queryHint="Course Code"
+            android:background="@color/Platinum"
+            />
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Search"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>-->
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/margin_scale2"
         android:id="@+id/rvTotalLectures"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
-        />
+        >
 
-</FrameLayout>
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</LinearLayout>

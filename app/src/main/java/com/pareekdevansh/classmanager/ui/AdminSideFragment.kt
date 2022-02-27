@@ -41,7 +41,7 @@ class AdminSideFragment : Fragment() {
         binding.btnAddClass.setOnClickListener {
             val lecture : Lecture? = getCurrentLecture()
             if(lecture != null ){
-                addLectureEntryToDatabase(lecture!!)
+                addLectureEntryToDatabase(lecture)
             }
             else{
                 val msg = "Please Fill All The Details"
