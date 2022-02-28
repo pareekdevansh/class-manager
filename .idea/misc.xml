@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/layout/content_home.xml" value="0.2722222222222222" />
         <entry key="app/src/main/res/layout/forgot_password.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_admin_side.xml" value="0.27905982905982907" />
+        <entry key="app/src/main/res/layout/fragment_annoucements.xml" value="0.2722222222222222" />
         <entry key="app/src/main/res/layout/fragment_change_password.xml" value="0.27905982905982907" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.27905982905982907" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.2722222222222222" />
@@ -36,6 +37,7 @@
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.2722222222222222" />
         <entry key="app/src/main/res/layout/fragment_update_profile.xml" value="0.13504273504273503" />
+        <entry key="app/src/main/res/layout/item_annoucement.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_lecture.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_lecture2.xml" value="0.2782051282051282" />
         <entry key="app/src/main/res/layout/item_lecture_today.xml" value="0.2722222222222222" />

@@ -12,12 +12,13 @@ import java.util.*
 class AppRepository {
 
     companion object{
+
         var auth = Firebase.auth
         var calendar : Calendar = Calendar.getInstance()
-        val userCollectoinRef = FirebaseFirestore.getInstance().collection("user")
-        val lectureCollectoinRef = FirebaseFirestore.getInstance().collection("lectures")
+        val userCollectoinReference = FirebaseFirestore.getInstance().collection("user")
+        val lectureCollectoinReference = FirebaseFirestore.getInstance().collection("lectures")
         val currDay = calendar.get(Calendar.DAY_OF_WEEK)
-
+        val annoucementCollectionReference = FirebaseFirestore.getInstance().collection("announcements")
     }
 
 }

@@ -1,6 +1,7 @@
 package com.pareekdevansh.classmanager.ui
 
 import android.os.Bundle
+import android.os.Looper.loop
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -74,15 +75,18 @@ class HomeFragment : Fragment() {
 
         }
 
-        val btnAdminSide = view.findViewById<Button>(R.id.btnAdminSide)
-        btnAdminSide.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToAdminSideFragment()
-            findNavController().navigate(action)
+        binding.btnAdminSide.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAdminSideFragment())
         }
 
         val btnSchedule = view.findViewById<Button>(R.id.btnSchdeule)
         btnSchedule.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToScheduleFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnAnnoucements.setOnClickListener{
+            val action = HomeFragmentDirections.actionHomeFragmentToAnnoucementsFragment()
             findNavController().navigate(action)
         }
 
@@ -153,9 +157,11 @@ class HomeFragment : Fragment() {
         // check for no classes for current day
         if (todaysClasses.isEmpty()) {
             // show no classes today
-            Toast.makeText(requireContext(), "No Classes Today", Toast.LENGTH_SHORT).show()
+            binding.tvNoClasses.visibility = View.VISIBLE
         } else {
             // apply recycler view
+            binding.tvNoClasses.visibility = View.GONE
+
             binding.rvLectures.apply {
                 adapter = TodaysLecturesAdapter(todaysClasses, calendar, requireContext())
                 layoutManager = LinearLayoutManager(requireContext())

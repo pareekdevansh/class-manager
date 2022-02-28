@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dull_white"
-    tools:context=".ui.AdminSideFragment">
+    tools:context=".adminside.AdminSideFragment">
 
 
     <LinearLayout
@@ -64,7 +64,6 @@
             android:inputType="time" />
 
 
-
         <EditText
             android:id="@+id/etJoiningLink"
             style="@style/style_edit_text"
@@ -74,7 +73,6 @@
             android:inputType="textUri" />
 
 
-
     </LinearLayout>
 
     <Button
@@ -82,17 +80,48 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Add"
+        app:layout_constraintEnd_toStartOf="@id/btnDeleteClass"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@id/btnDeleteClass"/>
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
     <Button
         android:id="@+id/btnDeleteClass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Delete"
-        app:layout_constraintTop_toTopOf="@id/btnAddClass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnAddClass"/>
+        app:layout_constraintStart_toEndOf="@id/btnAddClass"
+        app:layout_constraintTop_toTopOf="@id/btnAddClass" />
+
+    <EditText
+        android:id="@+id/etAnnoucementDate"
+        style="@style/style_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnDeleteClass" />
+
+    <EditText
+        android:id="@+id/etAnnoucement"
+        style="@style/style_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Annoucement"
+        android:inputType="textLongMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etAnnoucementDate" />
+
+    <Button
+        android:id="@+id/btnMakeAnnoucement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etAnnoucement" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

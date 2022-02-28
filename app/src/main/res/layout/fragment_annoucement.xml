@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.AnnoucementsFragment">
+
+
+    <TextView
+        android:id="@+id/tvNoAnnoucements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/style_text_lecture"
+        android:padding="@dimen/margin_scale3"
+        android:text="No Annoucements"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_large"
+        android:layout_marginBottom="@dimen/margin_scale2"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        />
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAnnoucements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+<!--    android:scrollbarStyle="outsideInset"-->
+
+
+</LinearLayout>
